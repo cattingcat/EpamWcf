@@ -51,68 +51,74 @@ namespace WCFServiceServer
         void AddPhone(Phone phone);
     }
 
-
+    [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single)]
     internal class ServiceImpl : IServicePersonAccessor, IServicePhoneAccessor
     {
-        public static IPersonBll PersonBusinessLogic { get; set; }
-        public static IPhoneBll PhoneBusinessLogic { get; set; }
+        private IPersonBll _personBusinessLogic; 
+        private IPhoneBll _phoneBusinessLogic;
+
+        public ServiceImpl(IPersonBll personBll, IPhoneBll phoneBll)
+        {
+            _personBusinessLogic = personBll;
+            _phoneBusinessLogic = phoneBll;
+        }
 
         #region PersonBll
         public Person[] GetPersons()
         {
-            return PersonBusinessLogic.GetPersons().ToArray();
+            return _personBusinessLogic.GetPersons().ToArray();
         }
 
         public Person GetPerson(int id)
         {
-            return PersonBusinessLogic.GetPerson(id);
+            return _personBusinessLogic.GetPerson(id);
         }
 
         public void DeletePerson(int personId)
         {
-            PersonBusinessLogic.DeletePerson(personId);
+            _personBusinessLogic.DeletePerson(personId);
         }
 
         public void UpdatePerson(Person person)
         {
-            PersonBusinessLogic.UpdatePerson(person);
+            _personBusinessLogic.UpdatePerson(person);
         }
 
         public void AddPerson(Person person)
         {
-            PersonBusinessLogic.AddPerson(person);
+            _personBusinessLogic.AddPerson(person);
         }
         #endregion
 
         #region PhonesBll
         public Phone[] GetPhones()
         {
-            return PhoneBusinessLogic.GetPhones().ToArray();
+            return _phoneBusinessLogic.GetPhones().ToArray();
         }
 
         public Phone[] GetPhones(int personId)
         {
-            return PhoneBusinessLogic.GetPhones(personId).ToArray();
+            return _phoneBusinessLogic.GetPhones(personId).ToArray();
         }
 
         public Phone GetPhone(int id)
         {
-            return PhoneBusinessLogic.GetPhone(id);
+            return _phoneBusinessLogic.GetPhone(id);
         }
 
         public void DeletePhone(int phoneId)
         {
-            PhoneBusinessLogic.DeletePhone(phoneId);
+            _phoneBusinessLogic.DeletePhone(phoneId);
         }
 
         public void UpdatePhone(Phone phone)
         {
-            PhoneBusinessLogic.UpdatePhone(phone);
+            _phoneBusinessLogic.UpdatePhone(phone);
         }
 
         public void AddPhone(Phone phone)
         {
-            PhoneBusinessLogic.AddPhone(phone);
+            _phoneBusinessLogic.AddPhone(phone);
         }
         #endregion
     }

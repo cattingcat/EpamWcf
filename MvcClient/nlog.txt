@@ -804,3 +804,6 @@
 06/25/2014 11:50:07|Trace|Application start!
 06/25/2014 11:50:10|Trace|Person controller created
 06/25/2014 11:50:10|Trace|Person controller /Index
+06/25/2014 12:12:39|Trace|Application start!
+06/25/2014 12:12:39|Trace|Person controller created
+06/25/2014 12:12:39|Trace|Person controller /Index

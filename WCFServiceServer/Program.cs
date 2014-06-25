@@ -20,10 +20,12 @@ namespace WCFServiceServer
             IAccessor<Person> personAccessor = new OrmPersonAccessor("serviceDb");
             IAccessor<Phone> phoneAccessor = new OrmPhoneAccessor("serviceDb");
 
-            ServiceImpl.PersonBusinessLogic = new PersonBll(personAccessor, phoneAccessor);
-            ServiceImpl.PhoneBusinessLogic = new PhoneBll(personAccessor, phoneAccessor);
+            IPersonBll personBll = new PersonBll(personAccessor, phoneAccessor);
+            IPhoneBll phoneBll = new PhoneBll(personAccessor, phoneAccessor);
 
-            ServiceHost host = new ServiceHost(typeof(ServiceImpl));
+            ServiceImpl serviceImpl = new ServiceImpl(personBll, phoneBll);
+
+            ServiceHost host = new ServiceHost(serviceImpl);
             host.Open();
 
 
