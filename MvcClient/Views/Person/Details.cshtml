@@ -1,0 +1,63 @@
+﻿@using DataAccessors.Entity
+@model Person
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details person</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Last name</th>
+                <th>Date of birth</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>            
+            <tr>
+                <td> @Model.Id </td>
+                <td> @Model.Name </td>
+                <td> @Model.LastName </td>
+                <td> @Model.DayOfBirth.ToString("d MMM yyyy") </td>
+                <td>
+                    <form action="/Person/Delete/@Model.Id" method="post">
+                        <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                    </form>
+                </td>                
+            </tr>            
+        </tbody>
+    </table>
+</div>
+
+<h2>Phones</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Number</th>
+                <th>Owner id</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Phones)
+            {
+                <tr>
+                    <td> @p.Id </td>
+                    <td> @p.Number </td>
+                    <td> @p.PersonId </td>
+                    <td>
+                        <form action="/Phone/Delete/@p.Id" method="post">
+                            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                    </td>                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

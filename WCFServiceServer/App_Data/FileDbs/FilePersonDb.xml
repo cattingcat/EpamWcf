@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <Id>0</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1994-09-11T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>1</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1991-03-07T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>2</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1980-04-03T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>3</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1970-05-14T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>4</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1966-03-19T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>5</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1998-05-16T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>6</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1960-10-09T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>7</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>2004-09-16T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>8</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1997-05-12T00:00:00</DayOfBirth>
+  </Person>
+  <Person>
+    <Id>9</Id>
+    <Name>Default name</Name>
+    <LastName>Delault last name</LastName>
+    <DayOfBirth>1965-10-04T00:00:00</DayOfBirth>
+  </Person>
+</ArrayOfPerson>

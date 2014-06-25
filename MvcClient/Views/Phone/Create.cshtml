@@ -1,0 +1,27 @@
+﻿@using DataAccessors.Entity;
+@model Phone
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Create</h2>
+<div class="form-signin">
+@using (Html.BeginForm())
+{        
+    <div class="col-sm-4">
+        @Html.TextAreaFor(p => p.Id, new {Class="form-control", placeholder="Id", autofocus="", rows="1"});
+        @Html.TextAreaFor(p => p.Number, new { Class="form-control", placeholder="Number", rows="1"});
+        @Html.DropDownListFor(
+            p => p.PersonId,
+            from person in (ViewBag.Persons as IEnumerable<Person>) 
+                select new SelectListItem { Text = String.Format("{0}: {1}",person.Id, person.Name), Value = person.Id.ToString() },
+            new { Class = "form-control" }
+        );
+    
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </div>
+    @Html.Partial("_CaptchaPartial")
+}
+</div>
+

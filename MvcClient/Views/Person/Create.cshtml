@@ -1,0 +1,25 @@
+﻿@using DataAccessors.Entity
+@model Person
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Create</h2>
+<div class="form-signin">
+@using (Html.BeginForm())
+{
+    <div class="col-sm-4">
+        @Html.TextAreaFor(p => p.Id, new { Class = "form-control", placeholder = "Id", autofocus = "", rows = "1" })
+        @Html.TextAreaFor(p => p.Name, new { Class = "form-control", placeholder = "Name", rows = "1" })
+        @Html.TextAreaFor(p => p.LastName, new { Class = "form-control", placeholder = "Lastname", rows = "1" })
+        <!-- Html.TextAreaFor(p => p.DayOfBirth, new { Class = "form-control", placeholder = "Id", autofocus = "", rows = "1" }) -->
+        <!-- name and id must be equal property-name -->
+        <input type="date" class="form-control" placeholder="Day of birth" id="DayOfBirth" name="DayOfBirth" />  
+       
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>  
+    </div>
+    @Html.Partial("_CaptchaPartial")
+}
+</div>
+

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9999/Services?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9999/Services?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9999/Services?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccessors.Entity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicePersonAccessor_GetPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersons" />
+  </wsdl:message>
+  <wsdl:message name="IServicePersonAccessor_GetPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePersonAccessor_GetPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerson" />
+  </wsdl:message>
+  <wsdl:message name="IServicePersonAccessor_GetPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePersonAccessor_DeletePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePerson" />
+  </wsdl:message>
+  <wsdl:message name="IServicePersonAccessor_UpdatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerson" />
+  </wsdl:message>
+  <wsdl:message name="IServicePersonAccessor_AddPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerson" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_GetPhones_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhones" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_GetPhones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_GetPhonesByPersonId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhonesByPersonId" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_GetPhonesByPersonId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhonesByPersonIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_GetPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhone" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_GetPhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_DeletePhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhone" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_UpdatePhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePhone" />
+  </wsdl:message>
+  <wsdl:message name="IServicePhoneAccessor_AddPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPhone" />
+  </wsdl:message>
+  <wsdl:portType name="IServicePersonAccessor">
+    <wsdl:operation name="GetPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePersonAccessor/GetPersons" message="tns:IServicePersonAccessor_GetPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePersonAccessor/GetPersonsResponse" message="tns:IServicePersonAccessor_GetPersons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePersonAccessor/GetPerson" message="tns:IServicePersonAccessor_GetPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePersonAccessor/GetPersonResponse" message="tns:IServicePersonAccessor_GetPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePersonAccessor/DeletePerson" message="tns:IServicePersonAccessor_DeletePerson_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePersonAccessor/UpdatePerson" message="tns:IServicePersonAccessor_UpdatePerson_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePersonAccessor/AddPerson" message="tns:IServicePersonAccessor_AddPerson_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IServicePhoneAccessor">
+    <wsdl:operation name="GetPhones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePhoneAccessor/GetPhones" message="tns:IServicePhoneAccessor_GetPhones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePhoneAccessor/GetPhonesResponse" message="tns:IServicePhoneAccessor_GetPhones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhonesByPersonId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePhoneAccessor/GetPhonesByPersonId" message="tns:IServicePhoneAccessor_GetPhonesByPersonId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePhoneAccessor/GetPhonesByPersonIdResponse" message="tns:IServicePhoneAccessor_GetPhonesByPersonId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePhoneAccessor/GetPhone" message="tns:IServicePhoneAccessor_GetPhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePhoneAccessor/GetPhoneResponse" message="tns:IServicePhoneAccessor_GetPhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePhoneAccessor/DeletePhone" message="tns:IServicePhoneAccessor_DeletePhone_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePhoneAccessor/UpdatePhone" message="tns:IServicePhoneAccessor_UpdatePhone_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePhoneAccessor/AddPhone" message="tns:IServicePhoneAccessor_AddPhone_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicePersonAccessor" type="tns:IServicePersonAccessor">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPersons">
+      <soap:operation soapAction="http://tempuri.org/IServicePersonAccessor/GetPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <soap:operation soapAction="http://tempuri.org/IServicePersonAccessor/GetPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <soap:operation soapAction="http://tempuri.org/IServicePersonAccessor/DeletePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <soap:operation soapAction="http://tempuri.org/IServicePersonAccessor/UpdatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <soap:operation soapAction="http://tempuri.org/IServicePersonAccessor/AddPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IServicePhoneAccessor" type="tns:IServicePhoneAccessor">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPhones">
+      <soap:operation soapAction="http://tempuri.org/IServicePhoneAccessor/GetPhones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhonesByPersonId">
+      <soap:operation soapAction="http://tempuri.org/IServicePhoneAccessor/GetPhonesByPersonId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhone">
+      <soap:operation soapAction="http://tempuri.org/IServicePhoneAccessor/GetPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhone">
+      <soap:operation soapAction="http://tempuri.org/IServicePhoneAccessor/DeletePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhone">
+      <soap:operation soapAction="http://tempuri.org/IServicePhoneAccessor/UpdatePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddPhone">
+      <soap:operation soapAction="http://tempuri.org/IServicePhoneAccessor/AddPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceImpl">
+    <wsdl:port name="BasicHttpBinding_IServicePersonAccessor" binding="tns:BasicHttpBinding_IServicePersonAccessor">
+      <soap:address location="http://localhost:9999/Services" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IServicePhoneAccessor" binding="tns:BasicHttpBinding_IServicePhoneAccessor">
+      <soap:address location="http://localhost:9999/Services" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

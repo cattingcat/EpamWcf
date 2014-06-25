@@ -1,0 +1,44 @@
+﻿@using DataAccessors.Entity;
+@model IEnumerable<Phone>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="table-responsive">
+    <form action="/Phone/Delete" method="post">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Number</th>
+                    <th>Owner id</th>
+                    <th>Delete</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td> @p.Id </td>
+                        <td> @p.Number </td>
+                        <td> @p.PersonId </td>
+                        <td>
+                            <button type="submit" name="id" value="@p.Id" class="btn btn-xs btn-danger">Delete</button>
+                        </td>
+                        <td>
+                            <a href="/Person/Details/@p.Id" class="btn btn-xs btn-outline" role="button">Details</a>
+                        </td>
+                    </tr>}
+            </tbody>
+        </table>
+
+        @Html.Partial("_CaptchaPartial")
+
+    </form>
+</div>
+<div class="col-sm-4">
+    <h3>Insert phone</h3>
+    <a href="/Phone/Create" class="btn btn-lg btn-outline" role="button">Create phone</a>
+</div>
